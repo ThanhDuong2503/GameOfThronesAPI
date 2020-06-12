@@ -41,7 +41,6 @@ function listNames(){getData().then(data => {
 })};
 
 
-
 function renderToDom(targetElementId, createElementType, addCreateElementClass, innerHTMLString) {
     // creates an HTML element of selected type
     // should be a string.
@@ -63,7 +62,7 @@ function renderToDom(targetElementId, createElementType, addCreateElementClass, 
     return element;
 }
 
-renderToDom("charGoTDb", "div" , getData());
+// renderToDom("charGoTDb", "div" , "name", getData());
 
     //fetch --> array als rückgabe
 // fetchPeople().then((people) =>
