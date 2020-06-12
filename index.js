@@ -1,5 +1,4 @@
 
-const characterDb = document.getElementById("charGoTDb");
 
 async function getData() {
 
@@ -16,19 +15,28 @@ function filterCharactersByGender(allChars, gender) {
     console.log(allChars.filter(char => char.gender===gender));
 }
 
+function mapCharactersByAlias(allChars) {
+    console.log(allChars.map(char => char.aliases))
+}
+
 getData().then(data => {
     filterCharactersByGender(data, "Male")
     filterCharactersByGender(data, "Female")
+    mapCharactersByAlias(data)
 })
 
 
+
 function renderToDom(targetElementId, createElementType, innerHTMLString) {
+
+    // gets HTML element with specified id from DOM
+    const targetElement = document.getElementById(targetElementId);
+
     // creates an HTML element of selected type
     // should be a string.
     // example: "li" creates a <li> element
     const element = document.createElement(createElementType);
-    // gets HTML element with specified id from DOM
-    const targetElement = document.getElementById(targetElementId);
+
     // appends previously created element
     // to element with specified id
     targetElement.appendChild(element);
@@ -39,3 +47,5 @@ function renderToDom(targetElementId, createElementType, innerHTMLString) {
     // returns element so the element can be manipulated
     return element;
 }
+
+renderToDom("charGoTDb", "string" , getData())
