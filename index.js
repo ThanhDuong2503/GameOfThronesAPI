@@ -44,7 +44,7 @@ function renderMaleCharacters() {
     const listOfResult = document.getElementById("renderResult");
     let resultList = listMaleChars();
     for (let result of Object.values(resultList)) {
-        let newListItem = document.createElement("li");
+        let newListItem = document.createElement("var");
         newListItem.innerHTML = result;
         listOfResult.appendChild(newListItem);
     }
