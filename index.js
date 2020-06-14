@@ -97,3 +97,15 @@ newTestItem3.innerHTML= `<h2>TestAnfang</h2>
 <h2>TesteEnde</h2>`;
 newTest2.appendChild(newTestItem3);
 
+const dataTest = {
+    "name": "Neo",
+    "job": "Killer",
+    "updatedAt": "2020-06-14"
+}
+fetch ("https://reqres.in/api/users/2", {
+    method: "PUT",
+    headers: {"content-Type": "application/json" },
+    body: JSON.stringify(dataTest)
+}).then (response => response.json())
+    .then (dataTest => console.log(dataTest, "Success"))
+    .catch (error => console.log(error, "Error occured somewere"));
